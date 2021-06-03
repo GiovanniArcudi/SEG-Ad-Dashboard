@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane fx:id="mainPane" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
+    <BorderPane minHeight="-Infinity" minWidth="-Infinity">
+        <top>
+            <MenuBar minHeight="-Infinity" minWidth="-Infinity" BorderPane.alignment="CENTER">
+                <Menu mnemonicParsing="false" text="File" styleClass="menu-button">
+                    <MenuItem mnemonicParsing="false" onAction="#openCampaignImporterDialog" text="Import Campaign">
+                        <accelerator>
+                            <KeyCodeCombination alt="UP" code="I" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                        </accelerator>
+                    </MenuItem>
+                    <MenuItem mnemonicParsing="false" onAction="#saveGraphAsPNG" text="Save Graph">
+                        <accelerator>
+                            <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                        </accelerator>
+                    </MenuItem>
+                    <MenuItem mnemonicParsing="false" onAction="#exitApplication" text="Exit">
+                        <accelerator>
+                            <KeyCodeCombination alt="UP" code="E" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                        </accelerator>
+                    </MenuItem>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help" styleClass="menu-button">
+                    <MenuItem mnemonicParsing="false" onAction="#openAboutDialog" text="About" />
+                    <MenuItem mnemonicParsing="false" onAction="#openPreferencesDialog" text="Preferences">
+                        <accelerator>
+                            <KeyCodeCombination alt="UP" code="L" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                        </accelerator>
+                    </MenuItem>
+                </Menu>
+            </MenuBar>
+        </top>
+        <center>
+            <HBox alignment="CENTER_LEFT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="526.0" prefWidth="1077.0" styleClass="custom-pane" BorderPane.alignment="CENTER">
+                <AnchorPane maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="campaign-manager">
+                    <VBox maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <TitledPane animated="false" minHeight="-Infinity" minWidth="-Infinity" text="Campaign Manager">
+                            <AnchorPane minHeight="-Infinity" minWidth="-Infinity">
+                                <VBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <HBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" spacing="10.0">
+                                        <Label minHeight="-Infinity" minWidth="-Infinity" text="Campaign:" />
+                                        <TextField fx:id="campaignName" editable="false" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" text="No campaign set" HBox.hgrow="ALWAYS" />
+                                    </HBox>
+                                    <HBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity">
+                                        <Button alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#openCampaignImporterDialog" text="Change Campaign" HBox.hgrow="ALWAYS" />
+                                    </HBox>
+                                </VBox>
+                            </AnchorPane>
+                        </TitledPane>
+                        <TitledPane animated="false" minHeight="-Infinity" minWidth="-Infinity" text="Statistics Viewer">
+                            <AnchorPane minHeight="-Infinity" minWidth="-Infinity">
+                                <VBox fx:id="totalMetrics" alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <HBox alignment="BASELINE_LEFT" spacing="5.0">
+                                        <Label minHeight="-Infinity" minWidth="-Infinity" text="Total impressions:" />
+                                        <Label />
+                                    </HBox>
+                                    <HBox alignment="BASELINE_LEFT" spacing="5.0">
+                                        <Label minHeight="-Infinity" minWidth="-Infinity" text="Total clicks:" />
+                                        <Label />
+                                    </HBox>
+                                    <HBox alignment="BASELINE_LEFT" spacing="5.0">
+                                        <Label minHeight="-Infinity" minWidth="-Infinity" text="Total uniques:" />
+                                        <Label />
+                                    </HBox>
+                                    <HBox alignment="BASELINE_LEFT" spacing="5.0">
+                                        <Label minHeight="-Infinity" minWidth="-Infinity" text="Total bounces:" />
+                                        <Label />
+                                    </HBox>
+                                    <HBox alignment="BASELINE_LEFT" spacing="5.0">
+                                        <Label minHeight="-Infinity" minWidth="-Infinity" text="Total conversions:" />
+                                        <Label />
+                                    </HBox>
+                                    <HBox alignment="BASELINE_LEFT" spacing="5.0">
+                                        <Label minHeight="-Infinity" minWidth="-Infinity" text="Total cost:" />
+                                        <Label />
+                                    </HBox>
+                                    <HBox alignment="BASELINE_LEFT" spacing="5.0">
+                                        <Label minHeight="-Infinity" minWidth="-Infinity" text="CTR:" />
+                                        <Label />
+                                        <Label minHeight="-Infinity" minWidth="-Infinity" text="clicks / impression" />
+                                    </HBox>
+                                    <HBox alignment="BASELINE_LEFT" spacing="5.0">
+                                        <Label minHeight="-Infinity" minWidth="-Infinity" text="CPA:" />
+                                        <Label />
+                                        <Label minHeight="-Infinity" minWidth="-Infinity" text="/ acquisition" />
+                                    </HBox>
+                                    <HBox alignment="BASELINE_LEFT" spacing="5.0">
+                                        <Label minHeight="-Infinity" minWidth="-Infinity" text="CPC:" />
+                                        <Label />
+                                        <Label minHeight="-Infinity" minWidth="-Infinity" text="/ click" />
+                                    </HBox>
+                                    <HBox alignment="BASELINE_LEFT" spacing="5.0">
+                                        <Label minHeight="-Infinity" minWidth="-Infinity" text="CPM:" />
+                                        <Label />
+                                        <Label minHeight="-Infinity" minWidth="-Infinity" text="/ 1000 impressions" />
+                                    </HBox>
+                                    <HBox alignment="BASELINE_LEFT" spacing="5.0">
+                                        <Label minHeight="-Infinity" minWidth="-Infinity" text="Bounce Rate:" />
+                                        <Label />
+                                        <Label minHeight="-Infinity" minWidth="-Infinity" text="bounces / click" />
+                                    </HBox>
+                                </VBox>
+                            </AnchorPane>
+                        </TitledPane>
+                    </VBox>
+                </AnchorPane>
+                <VBox HBox.hgrow="ALWAYS">
+                    <HBox alignment="CENTER">
+                        <Text styleClass="custom-title">Summary of metrics with applied filters</Text>
+                    </HBox>
+                    <HBox fx:id="filteredMetrics" alignment="CENTER" spacing="20">
+                        <padding>
+                            <Insets bottom="15" top="15" />
+                        </padding>
+                        <VBox alignment="CENTER">
+                            <Label text="Impressions">Impressions count</Label>
+                            <Label />
+                        </VBox>
+                        <VBox alignment="CENTER">
+                            <Label text="Clicks">Clicks count</Label>
+                            <Label />
+                        </VBox>
+                        <VBox alignment="CENTER">
+                            <Label text="Uniques">Uniques count</Label>
+                            <Label />
+                        </VBox>
+                        <VBox alignment="CENTER">
+                            <Label text="Bounces">Bounces count</Label>
+                            <Label />
+                        </VBox>
+                        <VBox alignment="CENTER">
+                            <Label text="Conversions">Conversions count</Label>
+                            <Label />
+                        </VBox>
+                        <VBox alignment="CENTER">
+                            <Label>Total cost</Label>
+                            <Label />
+                        </VBox>
+                        <VBox alignment="CENTER">
+                            <Label>CTR</Label>
+                            <Label />
+                            <Label>clicks / impression</Label>
+                        </VBox>
+                        <VBox alignment="CENTER">
+                            <Label>CPA</Label>
+                            <Label />
+                            <Label>/ acquisition</Label>
+                        </VBox>
+                        <VBox alignment="CENTER">
+                            <Label>CPC</Label>
+                            <Label />
+                            <Label>/ click</Label>
+                        </VBox>
+                        <VBox alignment="CENTER">
+                            <Label>CPM</Label>
+                            <Label />
+                            <Label>/ 1000 impressions</Label>
+                        </VBox>
+                        <VBox alignment="CENTER">
+                            <Label>Bounce Rate</Label>
+                            <Label />
+                            <Label>/ click</Label>
+                        </VBox>
+                    </HBox>
+                    <HBox VBox.vgrow="ALWAYS">
+                        <VBox HBox.hgrow="ALWAYS">
+                            <TabPane fx:id="tabPane" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+                                <Tab text="Impressions" />
+                                <Tab text="Clicks" />
+                                <Tab text="Uniques" />
+                                <Tab text="Conversions" />
+                                <Tab text="Bounces" />
+                                <Tab text="Cost" />
+                                <Tab text="CTR" />
+                                <Tab text="CPA" />
+                                <Tab text="CPC" />
+                                <Tab text="CPM" />
+                                <Tab text="Bounce Rate" />
+                                <Tab text="Click Cost Histogram" />
+                                <VBox.margin>
+                                    <Insets />
+                                </VBox.margin>
+                            </TabPane>
+                            <Separator />
+                            <HBox alignment="CENTER" maxHeight="45" minHeight="45" spacing="10">
+                                <Button onAction="#openInWindow" text="Open in a new window" />
+                                <Button onAction="#saveGraphAsPNG" text="Save graph" />
+                            </HBox>
+                        </VBox>
+                        <VBox alignment="TOP_CENTER" maxWidth="400" styleClass="graph-options">
+                            <Separator />
+                            <Label text="Graph Options" VBox.vgrow="ALWAYS">
+                                <font>
+                                    <Font size="14.0" />
+                                </font>
+                            </Label>
+                            <Separator />
+                            <VBox spacing="10">
+                                <padding>
+                                    <Insets bottom="10" left="10" right="10" top="10" />
+                                </padding>
+                                <HBox alignment="CENTER" spacing="10">
+                                    <Label maxWidth="Infinity" minHeight="-Infinity" minWidth="-Infinity" HBox.hgrow="ALWAYS">Start date:
+                                    </Label>
+                                    <DatePicker fx:id="startDate" prefWidth="200.0" />
+                                </HBox>
+                                <HBox alignment="CENTER" spacing="10">
+                                    <Label maxWidth="Infinity" minHeight="-Infinity" minWidth="-Infinity" text="End date:" HBox.hgrow="ALWAYS">End date:
+                                    </Label>
+                                    <DatePicker fx:id="endDate" prefWidth="200.0" />
+                                </HBox>
+                                <HBox alignment="CENTER">
+                                    <Button alignment="CENTER" maxWidth="1.7976931348623157E308" onAction="#resetDateRange" text="Reset Date Range" HBox.hgrow="ALWAYS" />
+                                </HBox>
+                                <Separator prefWidth="200.0" />
+                                <VBox fx:id="granularityControls" prefHeight="200.0" prefWidth="100.0">
+                                    <HBox alignment="CENTER_LEFT">
+                                        <Label maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+                                               minWidth="-Infinity" text="Granularity:" HBox.hgrow="ALWAYS"/>
+                                        <ComboBox fx:id="intervalChoiceBox" prefWidth="200.0" value="Daily">
+                                            <items>
+                                                <FXCollections fx:factory="observableArrayList">
+                                                    <String fx:value="Hourly"/>
+                                                    <String fx:value="Daily"/>
+                                                    <String fx:value="Weekly"/>
+                                                    <String fx:value="Monthly"/>
+                                                    <String fx:value="Yearly"/>
+                                                </FXCollections>
+                                            </items>
+                                        </ComboBox>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" minHeight="-Infinity" minWidth="-Infinity"
+                                          spacing="10.0">
+                                        <Label minHeight="-Infinity" minWidth="-Infinity" text="Show cumulative data:"/>
+                                        <CheckBox fx:id="isCumulativeCheckBox" minHeight="-Infinity"
+                                                  minWidth="-Infinity" selected="true"/>
+                                        <padding>
+                                            <Insets top="10.0"/>
+                                        </padding>
+                                    </HBox>
+                                </VBox>
+                                <Separator prefWidth="200.0" />
+                                <VBox fx:id="bounceSettings" disable="true" minHeight="-Infinity" minWidth="-Infinity" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <HBox alignment="CENTER_LEFT" minHeight="-Infinity" minWidth="-Infinity" spacing="10.0">
+                                        <Label minHeight="-Infinity" minWidth="-Infinity" text="Bounce definition:" />
+                                        <ComboBox fx:id="bouncesChoiceBox" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0" value="Visitor only views a single page" HBox.hgrow="ALWAYS">
+                                            <items>
+                                                <FXCollections fx:factory="observableArrayList">
+                                                    <String fx:value="Visitor only views a single page" />
+                                                    <String fx:value="Visitor leaves site within threshold" />
+                                                </FXCollections>
+                                            </items>
+                                        </ComboBox>
+                                    </HBox>
+                                    <HBox fx:id="bouncesThresholdContainer" alignment="CENTER_LEFT" minHeight="-Infinity" minWidth="-Infinity" spacing="10.0">
+                                        <Label minHeight="-Infinity" minWidth="-Infinity" text="Bounce threshold:" />
+                                        <TextField fx:id="bouncesThreshold" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0" />
+                                    </HBox>
+                                </VBox>
+                            </VBox>
+                            <Separator />
+                            <VBox>
+
+                            </VBox>
+                            <Label>Filters</Label>
+                            <Separator />
+                            <ScrollPane fx:id="filtersScrollpane" VBox.vgrow="ALWAYS">
+                                <VBox>
+                                    <VBox fx:id="ageBracket" spacing="10">
+                                        <padding>
+                                            <Insets topRightBottomLeft="10" />
+                                        </padding>
+                                        <Label>Age bracket</Label>
+                                        <HBox spacing="10">
+                                            <CheckBox selected="true" />
+                                            <Label text="&lt;25" />
+                                        </HBox>
+                                        <HBox spacing="10">
+                                            <CheckBox selected="true" />
+                                            <Label text="25-34" />
+                                        </HBox>
+                                        <HBox spacing="10">
+                                            <CheckBox selected="true" />
+                                            <Label text="35-44" />
+                                        </HBox>
+                                        <HBox spacing="10">
+                                            <CheckBox selected="true" />
+                                            <Label text="45-54" />
+                                        </HBox>
+                                        <HBox spacing="10">
+                                            <CheckBox selected="true" />
+                                            <Label text="&gt;54" />
+                                        </HBox>
+                                    </VBox>
+                                    <VBox fx:id="context" spacing="10">
+                                        <padding>
+                                            <Insets topRightBottomLeft="10" />
+                                        </padding>
+                                        <Label>Context</Label>
+                                        <HBox spacing="10">
+                                            <CheckBox selected="true" />
+                                            <Label text="News" />
+                                        </HBox>
+                                        <HBox spacing="10">
+                                            <CheckBox selected="true" />
+                                            <Label text="Shopping" />
+                                        </HBox>
+                                        <HBox spacing="10">
+                                            <CheckBox selected="true" />
+                                            <Label text="Social Media" />
+                                        </HBox>
+                                        <HBox spacing="10">
+                                            <CheckBox selected="true" />
+                                            <Label text="Blog" />
+                                        </HBox>
+                                        <HBox spacing="10">
+                                            <CheckBox selected="true" />
+                                            <Label text="Hobbies" />
+                                        </HBox>
+                                        <HBox spacing="10">
+                                            <CheckBox selected="true" />
+                                            <Label text="Travel" />
+                                        </HBox>
+                                    </VBox>
+                                    <VBox fx:id="gender" spacing="10">
+                                        <padding>
+                                            <Insets topRightBottomLeft="10" />
+                                        </padding>
+                                        <Label>Gender</Label>
+                                        <HBox spacing="10">
+                                            <CheckBox selected="true" />
+                                            <Label text="Male" />
+                                        </HBox>
+                                        <HBox spacing="10">
+                                            <CheckBox selected="true" />
+                                            <Label text="Female" />
+                                        </HBox>
+                                    </VBox>
+                                    <VBox fx:id="income" spacing="10">
+                                        <padding>
+                                            <Insets topRightBottomLeft="10" />
+                                        </padding>
+                                        <Label>Income</Label>
+                                        <HBox spacing="10">
+                                            <CheckBox selected="true" />
+                                            <Label text="Low" />
+                                        </HBox>
+                                        <HBox spacing="10">
+                                            <CheckBox selected="true" />
+                                            <Label text="Medium" />
+                                        </HBox>
+                                        <HBox spacing="10">
+                                            <CheckBox selected="true" />
+                                            <Label text="High" />
+                                        </HBox>
+                                    </VBox>
+                                </VBox>
+                            </ScrollPane>
+                            <Separator />
+                            <HBox alignment="CENTER">
+                                <padding>
+                                    <Insets topRightBottomLeft="10" />
+                                </padding>
+                                <Button fx:id="updateBtn" alignment="CENTER" maxWidth="1.7976931348623157E308" onAction="#graphOptionsChanged" text="Update graph" HBox.hgrow="ALWAYS" />
+                            </HBox>
+                        </VBox>
+                    </HBox>
+
+
+                </VBox>
+            </HBox>
+        </center>
+    </BorderPane>
+    <VBox fx:id="progressIndicatorContainer" alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" spacing="10" visible="false">
+        <VBox alignment="CENTER" maxWidth="100" styleClass="custom-alert" VBox.vgrow="NEVER">
+            <padding>
+                <Insets topRightBottomLeft="10" />
+            </padding>
+            <ProgressIndicator minHeight="-Infinity" minWidth="-Infinity" />
+            <Label alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" style="-fx-font-weight: bold">Loading
+            </Label>
+        </VBox>
+
+
+    </VBox>
+
+
+</StackPane>

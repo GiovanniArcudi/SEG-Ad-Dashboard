@@ -1,0 +1,4 @@
+#CQEngine data persistence
+*.dat
+*.dat-shm
+*.dat-wal

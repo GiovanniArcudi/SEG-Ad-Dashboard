@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="anchorPane" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/15.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PreferencesDialogController">
+    <stylesheets>
+        <URL value="@../styles.css"/>
+    </stylesheets>
+    <VBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0"
+          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <TitledPane animated="false" collapsible="false" minHeight="-Infinity" minWidth="-Infinity"
+                    text="Font Size">
+            <AnchorPane minHeight="-Infinity" minWidth="-Infinity">
+                <AnchorPane layoutX="9.600000381469727" layoutY="9.600000381469727" minHeight="-Infinity"
+                            minWidth="-Infinity">
+                    <padding>
+                        <Insets top="20.0"/>
+                    </padding>
+                    <VBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" spacing="10.0"
+                          AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                          AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <padding>
+                            <Insets left="30.0" right="30.0"/>
+                        </padding>
+                        <Slider fx:id="slider" majorTickUnit="1.0" max="15.0" min="10.0"
+                                minHeight="-Infinity" minWidth="-Infinity" minorTickCount="0"
+                                onMouseClicked="#changeToSliderClicked"
+                                onMouseDragged="#changeToSliderDragged" showTickLabels="true"
+                                showTickMarks="true" snapToTicks="true"/>
+                        <HBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity"
+                              prefHeight="50.0" prefWidth="450.0">
+                            <Label minHeight="-Infinity" minWidth="-Infinity" text="Current: "/>
+                            <TextField fx:id="textField" minHeight="-Infinity"
+                                       minWidth="-Infinity"
+                                       onKeyTyped="#changeToTypedFontSize"/>
+                        </HBox>
+                    </VBox>
+                </AnchorPane>
+            </AnchorPane>
+        </TitledPane>
+        <HBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" spacing="10.0">
+            <padding>
+                <Insets top="10.0"/>
+            </padding>
+            <Button maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity"
+                    mnemonicParsing="false" onAction="#closeDialog" text="Cancel" HBox.hgrow="ALWAYS"/>
+            <Button fx:id="apply" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity"
+                    mnemonicParsing="false" onMousePressed="#applyAndConfirm" text="Apply &amp; Confirm"
+                    HBox.hgrow="ALWAYS"/>
+        </HBox>
+    </VBox>
+</AnchorPane>

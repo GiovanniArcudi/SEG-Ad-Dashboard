@@ -1,0 +1,260 @@
+.root {
+    -fx-font-size: 12px;
+}
+
+.prefDialog {
+    -fx-font-size: 12px;
+}
+
+.split-pane {
+    -fx-background-color: #23272a;
+}
+
+.tab-pane {
+    -fx-background-color: #23272a;
+}
+
+.tab-header-background {
+    -fx-background-color: #23272a;
+    -fx-border-color: #474c52;
+    -fx-border-width: 0 0 1 0;
+}
+
+.titled-pane {
+    -fx-text-fill: white;
+}
+
+.title {
+    -fx-background-color: #474c52;
+    -fx-border-style: none;
+    -fx-background-radius: 0px;
+}
+
+.scroll-pane {
+    -fx-background: #23272a;
+    -fx-border-color: #23272a;
+}
+
+.tab {
+    -fx-background-color: #474c52;
+}
+
+.tab-pane:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {
+    -fx-border-color: #7289da;
+}
+
+.tab-label {
+    -fx-text-fill: white;
+}
+
+.tab:selected {
+    -fx-background-color: #7289da;
+}
+
+.button {
+    -fx-background-color: #7289da;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.content {
+    -fx-background-color: #23272a;
+    -fx-box-border: transparent;
+}
+
+
+.label {
+    -fx-text-fill: #ffffff;
+    -fx-box-border: transparent;
+    -fx-font-weight: 600px;
+}
+
+.separator *.line {
+    -fx-border-style: solid;
+    -fx-border-width: 0 0 1 0; /* its make really one-pixel-border */
+    -fx-border-color: #474c52;
+}
+
+.split-pane-divider {
+    -fx-background-color: #474c52;
+    -fx-box-border: transparent;
+}
+
+.scroll-bar:horizontal, .scroll-bar:vertical {
+    -fx-background-color: #23272a;
+}
+
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #474c52;
+    -fx-border-color: transparent;
+}
+
+.menu-bar, .menu-item, .context-menu {
+    -fx-background-color: #474c52;
+}
+
+.menu:hover, .menu-item:hover {
+    -fx-background-color: #7289da;
+}
+
+.menu-bar > .container > .menu-button:hover,
+.menu-bar > .container > .menu-button:focused,
+.menu-bar > .container > .menu-button:showing {
+    -fx-background: -fx-selection-bar;
+    -fx-background-color: #7289da;
+}
+
+.chart {
+    -fx-background-color: #23272a;
+}
+
+.chart-plot-background {
+    -fx-background-color: #474c52;
+}
+
+.default-color0.chart-series-line {
+    -fx-stroke: #7289da;
+}
+
+.default-color0.chart-bar {
+    -fx-bar-fill: #7289da;
+}
+
+.default-color0.chart-line-symbol {
+    -fx-background-color: #7289da, white;
+}
+
+.chart-vertical-grid-lines {
+    -fx-stroke: #636a73
+}
+
+.chart-horizontal-grid-lines {
+    -fx-stroke: #636a73
+}
+
+.axis {
+    -fx-tick-label-fill: #ffffff;
+}
+
+.combo-box-base {
+    -fx-background-color: #636a73;
+    -fx-text-fill: #ffffff;
+}
+
+.combo-box .list-cell {
+    -fx-background-color: #636a73;
+    -fx-text-fill: #ffffff;
+}
+
+.arrow {
+    -fx-stroke: #ffffff;
+    -fx-background-color: #ffffff;
+}
+
+.combo-box-popup .list-view .list-cell {
+    -fx-padding: 4 0 4 5;
+    -fx-background-color: #23272a;
+    -fx-text-fill: white;
+}
+
+.combo-box-popup .list-view .list-cell:filled:selected, .combo-box-popup .list-view .list-cell:filled:selected:hover {
+    -fx-background: -fx-accent;
+    -fx-background-color: -fx-selection-bar;
+    -fx-text-fill: white;
+}
+
+.combo-box-popup .list-view .list-cell:filled:hover {
+    -fx-background-color: #636a73;
+    -fx-text-fill: white;
+}
+
+.check-box .box {
+    -fx-background-color: #99aab5;
+    -fx-border-color: #99aab5;
+    -fx-border-radius: 3px;
+}
+
+.check-box:selected .mark {
+    -fx-background-color: white;
+}
+
+.check-box:selected .box {
+    -fx-background-color: #7289da;
+}
+
+.custom-title {
+    -fx-font-weight: bold;
+    -fx-font-size: 23;
+    -fx-fill: #FFFFFF;
+}
+
+.text-field {
+    -fx-background-color: #636a73;
+    -fx-text-fill: white;
+}
+
+.custom-alert {
+    -fx-background-color: #99aab5;
+    -fx-background-radius: 5;
+}
+
+.date-picker > .arrow-button {
+    -fx-background-size: 60% 60%; /* Can be `cover` or `100% 100%` ect. */
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center center; /* Put the icon in the center */
+    -fx-background-color: #7289da;
+}
+
+.graph-options {
+    -fx-border-width: 0 0 0 1;
+    -fx-border-color: #636a73;
+}
+
+.progress-indicator {
+    -fx-progress-color: #7289da;
+}
+
+.campaign-manager {
+    -fx-border-width: 0 1 0 0;
+    -fx-border-color: #636a73;
+}
+
+.custom-pane {
+    -fx-background-color: #23272a;
+}
+
+.date-picker-popup > .calendar-grid {
+    -fx-background-color: #23272a;
+}
+
+.date-picker-popup > * > .day-cell {
+    -fx-background-color: #23272a;
+    -fx-text-fill: white;
+}
+
+.date-picker-popup > .month-year-pane {
+    -fx-background-color: #23272a;
+}
+
+.date-picker-popup > * > .day-name-cell {
+    -fx-text-fill: white;
+}
+
+.date-picker-popup > * > .week-number-cell {
+    -fx-border-color: none;
+    -fx-background-color: #23272a;
+    -fx-text-fill: #7289da;
+}
+
+.date-picker-popup > * > .spinner {
+    -fx-background-color: #636a73;
+}
+.names {
+    -fx-font-style: italic;
+}
+
+.aboutTitle {
+    -fx-font-size: 14;
+    -fx-font-weight: bold;
+}

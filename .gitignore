@@ -1,0 +1,36 @@
+# compiled
+*.class
+/bin/
+target/
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+#Preferences
+*.campaign
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+# eclipse
+.classpath
+.project
+.settings
+
+#intelliJ
+*.iml
+*.bat
+.idea/
+out/
+dependency-reduced-pom.xml
+
+# other
+.DS_Store
+*.zip
+config.properties
+*.png
